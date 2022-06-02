@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "ir.hamidrezaAmz.magicalnews"
+        minSdk rootProject.ext.minSdk
+        targetSdk rootProject.ext.targetSdk
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    // GLOBAL
+    implementation("androidx.core:core-ktx:${rootProject.ext.androidxCoreKtxVersion}")
+    implementation("androidx.appcompat:appcompat:${rootProject.ext.androidxAppcompatVersion}")
+    implementation("com.google.android.material:material:${rootProject.ext.androidMaterialVersion}")
+    implementation("androidx.constraintlayout:constraintlayout:${rootProject.ext.androidxConstraintlayoutVersion}")
+
+    // LIFECYCLE
+    implementation("androidx.lifecycle:lifecycle-extensions:${rootProject.ext.androidxLifecycleExtensionsVersion}")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.ext.androidxLifecycleVersion}")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.ext.androidxLifecycleVersion}")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.ext.androidxLifecycleVersion}")
+    implementation("androidx.fragment:fragment-ktx:${rootProject.ext.androidxFragmentKtxVersion}")
+
+    // COROUTINES
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${rootProject.ext.kotlinxCoroutinesCoreVersion}")
+
+    // HILT
+    implementation("com.google.dagger:hilt-android:${rootProject.ext.googleDaggerHiltVersion}")
+    kapt("com.google.dagger:hilt-android-compiler:${rootProject.ext.googleDaggerHiltVersion}")
+
+    // RETROFIT
+    implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.squareupRetrofit2Version}"
+    implementation("com.squareup.retrofit2:retrofit:${rootProject.ext.squareupRetrofit2Version}") {
+        exclude module: 'okhttp'
+    }
+    implementation("com.squareup.okhttp3:okhttp-urlconnection:${rootProject.ext.squareupOkhttp3Version}")
+    implementation("com.squareup.okhttp3:logging-interceptor:${rootProject.ext.squareupOkhttp3Version}")
+    implementation("com.squareup.okhttp3:okhttp:${rootProject.ext.squareupOkhttp3Version}")
+
+    // GSON
+    implementation("com.google.code.gson:gson:${rootProject.ext.googleCodeGsonVersion}")
+}
