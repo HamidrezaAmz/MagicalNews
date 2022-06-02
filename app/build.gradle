@@ -34,6 +34,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        dataBinding true // for data binding
+        viewBinding true // for view binding
+    }
 }
 
 dependencies {
@@ -50,6 +55,10 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.ext.androidxLifecycleVersion}")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.ext.androidxLifecycleVersion}")
     implementation("androidx.fragment:fragment-ktx:${rootProject.ext.androidxFragmentKtxVersion}")
+
+    // NAVIGATION COMPONENT
+    implementation("androidx.navigation:navigation-fragment-ktx:${rootProject.ext.androidxNavigationVersion}")
+    implementation("androidx.navigation:navigation-ui-ktx:${rootProject.ext.androidxNavigationVersion}")
 
     // COROUTINES
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${rootProject.ext.kotlinxCoroutinesCoreVersion}")
@@ -69,4 +78,5 @@ dependencies {
 
     // GSON
     implementation("com.google.code.gson:gson:${rootProject.ext.googleCodeGsonVersion}")
+
 }

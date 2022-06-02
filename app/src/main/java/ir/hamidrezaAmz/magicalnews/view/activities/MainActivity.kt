@@ -1,12 +1,19 @@
 package ir.hamidrezaAmz.magicalnews.view.activities
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import ir.hamidrezaAmz.magicalnews.R
+import ir.hamidrezaAmz.magicalnews.databinding.ActivityMainBinding
+import ir.hamidrezaAmz.magicalnews.view.base.BaseActivityBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivityBinding<ActivityMainBinding>() {
+
+    override fun getLayoutResourceId(): Int {
+        return R.layout.activity_main
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        
     }
+
 }
