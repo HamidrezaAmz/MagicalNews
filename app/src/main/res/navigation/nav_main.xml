@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/newsAgencyListFragment">
+
+    <fragment
+        android:id="@+id/newsAgencyListFragment"
+        android:name="ir.hamidrezaAmz.magicalnews.view.fragments.NewsAgencyListFragment"
+        android:label="fragment_news_agency_list"
+        tools:layout="@layout/fragment_news_agency_list" >
+        <action
+            android:id="@+id/action_newsAgencyListFragment_to_newsAgencyDetailsFragment"
+            app:destination="@id/newsAgencyDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsAgencyDetailsFragment"
+        android:name="ir.hamidrezaAmz.magicalnews.view.fragments.NewsAgencyDetailsFragment"
+        android:label="fragment_news_agency_details"
+        tools:layout="@layout/fragment_news_agency_details" />
+</navigation>
