@@ -9,11 +9,12 @@
         android:id="@+id/newsAgencyListFragment"
         android:name="ir.hamidrezaAmz.magicalnews.view.fragments.NewsAgencyListFragment"
         android:label="fragment_news_agency_list"
-        tools:layout="@layout/fragment_news_agency_list" >
+        tools:layout="@layout/fragment_news_agency_list">
         <action
             android:id="@+id/action_newsAgencyListFragment_to_newsAgencyDetailsFragment"
             app:destination="@id/newsAgencyDetailsFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/newsAgencyDetailsFragment"
         android:name="ir.hamidrezaAmz.magicalnews.view.fragments.NewsAgencyDetailsFragment"

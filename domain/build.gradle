@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -31,11 +34,31 @@ android {
 
 dependencies {
 
+    // GLOBAL
     implementation("androidx.core:core-ktx:${rootProject.ext.androidxCoreKtxVersion}")
     implementation("androidx.appcompat:appcompat:${rootProject.ext.androidxAppcompatVersion}")
     implementation("com.google.android.material:material:${rootProject.ext.androidMaterialVersion}")
     implementation("androidx.constraintlayout:constraintlayout:${rootProject.ext.androidxConstraintlayoutVersion}")
 
-    implementation project(path: ':data')
+    // COROUTINES
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${rootProject.ext.kotlinxCoroutinesCoreVersion}")
+
+    // HILT
+    implementation("com.google.dagger:hilt-android:${rootProject.ext.googleDaggerHiltVersion}")
+    kapt("com.google.dagger:hilt-android-compiler:${rootProject.ext.googleDaggerHiltVersion}")
+
+    // RETROFIT
+    implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.squareupRetrofit2Version}"
+    implementation("com.squareup.retrofit2:retrofit:${rootProject.ext.squareupRetrofit2Version}") {
+        exclude module: 'okhttp'
+    }
+    implementation("com.squareup.okhttp3:okhttp-urlconnection:${rootProject.ext.squareupOkhttp3Version}")
+    implementation("com.squareup.okhttp3:logging-interceptor:${rootProject.ext.squareupOkhttp3Version}")
+    implementation("com.squareup.okhttp3:okhttp:${rootProject.ext.squareupOkhttp3Version}")
+
+    // GSON
+    implementation("com.google.code.gson:gson:${rootProject.ext.googleCodeGsonVersion}")
+
+    api project(path: ':data')
 
 }
