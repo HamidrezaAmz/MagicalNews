@@ -2,7 +2,7 @@ package ir.hamidrezaamz.data.apimodels
 
 import com.google.gson.annotations.SerializedName
 
-data class NewsResponseModel(
+data class NewsArticlesResponseModel(
     @SerializedName("status")
     var status: String,
     @SerializedName("totalResults")

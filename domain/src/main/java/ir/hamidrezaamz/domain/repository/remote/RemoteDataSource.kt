@@ -9,6 +9,10 @@ class RemoteDataSource @Inject constructor(
     private val newsApiService: NewsApiService
 ) : BaseDataSource() {
 
+    suspend fun getNewsSourceList() = getResult {
+        newsApiService.getNewsSourceList(PublicValue.API_KEY)
+    }
+
     suspend fun getNewsList() = getResult {
         newsApiService.getNewsList("BITCOIN", PublicValue.API_KEY)
     }

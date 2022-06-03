@@ -1,6 +1,7 @@
 package ir.hamidrezaamz.domain.repository
 
-import ir.hamidrezaamz.data.apimodels.NewsResponseModel
+import ir.hamidrezaamz.data.apimodels.NewsArticlesResponseModel
+import ir.hamidrezaamz.data.apimodels.NewsSourceResponseModel
 import ir.hamidrezaamz.domain.models.NewsModel
 import ir.hamidrezaamz.domain.repository.remote.RemoteDataSource
 import ir.hamidrezaamz.domain.repository.remote.base.ApiResult
@@ -11,11 +12,15 @@ class DataRepositoryImpl @Inject constructor(
     // local data source is loading ...
 ) : DataRepository {
 
-    override suspend fun getNewsList(): ApiResult<NewsResponseModel> {
+    override suspend fun getNewsSourceList(): ApiResult<NewsSourceResponseModel> {
+        return remoteDataSource.getNewsSourceList()
+    }
+
+    override suspend fun getNewsList(): ApiResult<NewsArticlesResponseModel> {
         return remoteDataSource.getNewsList()
     }
 
-    override fun getNewsDetail(): NewsModel {
+    override suspend fun getNewsDetail(): NewsModel {
         return NewsModel(-1, "NO NAME")
     }
 

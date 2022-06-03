@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import ir.hamidrezaAmz.magicalnews.R
 import ir.hamidrezaAmz.magicalnews.databinding.FragmentNewsAgencyDetailsBinding
-import ir.hamidrezaAmz.magicalnews.view.base.BaseFragmentBinding
+import ir.hamidrezaAmz.magicalnews.view.fragments.base.BaseFragmentBinding
 
 class NewsAgencyDetailsFragment : BaseFragmentBinding<FragmentNewsAgencyDetailsBinding>() {
 
