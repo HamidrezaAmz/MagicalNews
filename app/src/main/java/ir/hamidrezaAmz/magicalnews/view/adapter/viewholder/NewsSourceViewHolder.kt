@@ -1,5 +1,6 @@
 package ir.hamidrezaAmz.magicalnews.view.adapter.viewholder
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,17 +13,22 @@ class NewsSourceViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.recyclerview_news_source_list_item, parent, false)),
     View.OnClickListener {
 
-    private var mTitleView: AppCompatTextView? = null
+    private var textViewTitle: AppCompatTextView? = null
+    private var textViewDescription: AppCompatTextView? = null
 
     init {
-        mTitleView = itemView.findViewById(R.id.appCompatTextView_title)
+        textViewTitle = itemView.findViewById(R.id.appCompatTextView_title)
+        textViewDescription = itemView.findViewById(R.id.appCompatTextView_description)
+
+        itemView.setOnClickListener(this)
     }
 
     fun bind(sourceModel: SourceModel) {
-        mTitleView?.text = sourceModel.name
+        textViewTitle?.text = sourceModel.name
+        textViewDescription?.text = sourceModel.description
     }
 
     override fun onClick(view: View?) {
-        TODO("Not yet implemented")
+        Log.i("TAG", "onClick: ")
     }
 }
