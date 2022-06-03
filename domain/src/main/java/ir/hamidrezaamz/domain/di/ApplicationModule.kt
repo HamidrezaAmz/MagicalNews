@@ -10,7 +10,7 @@ import ir.hamidrezaamz.data.apiservice.NewsApiService
 import ir.hamidrezaamz.data.extras.PublicValue
 import ir.hamidrezaamz.domain.repository.DataRepositoryImpl
 import ir.hamidrezaamz.domain.repository.remote.RemoteDataSource
-import ir.hamidrezaamz.domain.usecases.NewsListUseCase
+import ir.hamidrezaamz.domain.usecases.NewsSourceListUseCase
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -21,7 +21,7 @@ class ApplicationModule {
 
     @Singleton
     @Provides
-    fun provideNewsAgencyList(repo: DataRepositoryImpl) = NewsListUseCase(repo)
+    fun provideNewsAgencyList(repo: DataRepositoryImpl) = NewsSourceListUseCase(repo)
 
     @Singleton
     @Provides

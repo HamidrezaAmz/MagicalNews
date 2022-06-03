@@ -1,4 +1,4 @@
-package ir.hamidrezaAmz.magicalnews.view.base
+package ir.hamidrezaAmz.magicalnews.view.activities.base
 
 import android.os.Bundle
 import android.os.PersistableBundle
