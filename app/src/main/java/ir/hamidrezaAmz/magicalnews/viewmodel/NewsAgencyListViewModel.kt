@@ -4,21 +4,21 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import ir.hamidrezaamz.domain.models.NewsAgencyModel
-import ir.hamidrezaamz.domain.usecases.NewsAgencyListUseCase
+import ir.hamidrezaamz.domain.models.NewsModel
+import ir.hamidrezaamz.domain.usecases.NewsListUseCase
 import javax.inject.Inject
 
 @HiltViewModel
 class NewsAgencyListViewModel @Inject constructor(
-    private val newsAgencyListUseCase: NewsAgencyListUseCase
+    private val newsListUseCase: NewsListUseCase
 ) : ViewModel() {
 
-    private val _newsAgencyListMutableLiveData = MutableLiveData<List<NewsAgencyModel>>()
-    val newsAgencyListLiveData: LiveData<List<NewsAgencyModel>>
-        get() = _newsAgencyListMutableLiveData
+    private val _newsListMutableLiveData = MutableLiveData<List<NewsModel>>()
+    val newsListLiveData: LiveData<List<NewsModel>>
+        get() = _newsListMutableLiveData
 
-    suspend fun getNewsAgencyList() {
-        _newsAgencyListMutableLiveData.postValue(newsAgencyListUseCase.invoke())
+    suspend fun getNewsList() {
+        _newsListMutableLiveData.postValue(newsListUseCase.invoke())
     }
 
 }

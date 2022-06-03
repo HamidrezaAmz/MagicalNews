@@ -1,15 +1,20 @@
 package ir.hamidrezaamz.domain.repository
 
-import ir.hamidrezaamz.domain.models.NewsAgencyModel
+import ir.hamidrezaamz.domain.models.NewsModel
+import ir.hamidrezaamz.domain.repository.remote.RemoteDataSource
+import javax.inject.Inject
 
-class DataRepositoryImpl : DataRepository {
+class DataRepositoryImpl @Inject constructor(
+    private val remoteDataSource: RemoteDataSource
+    // local data source is loading ...
+) : DataRepository {
 
-    override fun getNewsAgencyList(): List<NewsAgencyModel> {
-        return listOf()
+    override suspend fun getNewsList(): List<NewsModel> {
+        return remoteDataSource.getNewsList()
     }
 
-    override fun getNewsAgencyDetail(): NewsAgencyModel {
-        return NewsAgencyModel(-1, "NO NAME")
+    override fun getNewsDetail(): NewsModel {
+        return NewsModel(-1, "NO NAME")
     }
 
 }

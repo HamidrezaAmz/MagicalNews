@@ -1,11 +1,11 @@
 package ir.hamidrezaamz.domain.repository
 
-import ir.hamidrezaamz.domain.models.NewsAgencyModel
+import ir.hamidrezaamz.domain.models.NewsModel
 
 interface DataRepository {
 
-    fun getNewsAgencyList(): List<NewsAgencyModel>
+    suspend fun getNewsList(): List<NewsModel>
 
-    fun getNewsAgencyDetail(): NewsAgencyModel
+    fun getNewsDetail(): NewsModel
 
 }

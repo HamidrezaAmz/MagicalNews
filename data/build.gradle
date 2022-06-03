@@ -13,12 +13,10 @@ java {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    // OKHTTP
-    implementation("com.squareup.retrofit2:retrofit:${rootProject.ext.squareupRetrofit2Version}")
-    implementation("com.squareup.okhttp3:okhttp-urlconnection:${rootProject.ext.squareupOkhttp3Version}")
-    implementation("com.squareup.okhttp3:logging-interceptor:${rootProject.ext.squareupOkhttp3Version}")
-    implementation("com.squareup.okhttp3:okhttp:${rootProject.ext.squareupOkhttp3Version}")
+    // RETROFIT
+    implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.squareupRetrofit2Version}"
+    implementation("com.squareup.retrofit2:retrofit:${rootProject.ext.squareupRetrofit2Version}") {
+        exclude module: 'okhttp'
+    }
 
-    // GSON
-    implementation("com.google.code.gson:gson:${rootProject.ext.googleCodeGsonVersion}")
 }

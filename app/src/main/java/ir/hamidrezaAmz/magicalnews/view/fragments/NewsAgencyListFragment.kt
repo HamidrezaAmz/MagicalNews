@@ -28,7 +28,7 @@ class NewsAgencyListFragment : BaseFragmentBinding<FragmentNewsAgencyListBinding
 
     private fun initialize() {
 
-        viewModel.newsAgencyListLiveData.observe(viewLifecycleOwner) {
+        viewModel.newsListLiveData.observe(viewLifecycleOwner) {
             Log.i(TAG, "initialize: newsAgencyListLiveData -> ${it.size}")
         }
 
@@ -37,7 +37,7 @@ class NewsAgencyListFragment : BaseFragmentBinding<FragmentNewsAgencyListBinding
 
     private fun fetchData() {
         lifecycleScope.launch {
-            viewModel.getNewsAgencyList()
+            viewModel.getNewsList()
         }
     }
 
