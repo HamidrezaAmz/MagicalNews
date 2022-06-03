@@ -79,4 +79,6 @@ dependencies {
     // GSON
     implementation("com.google.code.gson:gson:${rootProject.ext.googleCodeGsonVersion}")
 
+    implementation project(path: ':domain')
+
 }

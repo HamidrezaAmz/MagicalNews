@@ -6,17 +6,19 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    // OKHTTP
     implementation("com.squareup.retrofit2:retrofit:${rootProject.ext.squareupRetrofit2Version}")
     implementation("com.squareup.okhttp3:okhttp-urlconnection:${rootProject.ext.squareupOkhttp3Version}")
     implementation("com.squareup.okhttp3:logging-interceptor:${rootProject.ext.squareupOkhttp3Version}")
     implementation("com.squareup.okhttp3:okhttp:${rootProject.ext.squareupOkhttp3Version}")
 
+    // GSON
     implementation("com.google.code.gson:gson:${rootProject.ext.googleCodeGsonVersion}")
 }

@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 
 abstract class BaseFragmentBinding<B : ViewDataBinding> : Fragment() {
 
+    protected val TAG = javaClass.simpleName + "_TAG"
+
     private lateinit var binding: B
 
     abstract fun getLayoutResourceId(): Int
