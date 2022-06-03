@@ -1,7 +1,9 @@
 package ir.hamidrezaamz.domain.repository
 
+import ir.hamidrezaamz.data.apimodels.NewsResponseModel
 import ir.hamidrezaamz.domain.models.NewsModel
 import ir.hamidrezaamz.domain.repository.remote.RemoteDataSource
+import ir.hamidrezaamz.domain.repository.remote.base.ApiResult
 import javax.inject.Inject
 
 class DataRepositoryImpl @Inject constructor(
@@ -9,7 +11,7 @@ class DataRepositoryImpl @Inject constructor(
     // local data source is loading ...
 ) : DataRepository {
 
-    override suspend fun getNewsList(): List<NewsModel> {
+    override suspend fun getNewsList(): ApiResult<NewsResponseModel> {
         return remoteDataSource.getNewsList()
     }
 
