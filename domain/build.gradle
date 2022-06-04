@@ -59,6 +59,11 @@ dependencies {
     // GSON
     implementation("com.google.code.gson:gson:${rootProject.ext.googleCodeGsonVersion}")
 
+    // ROOM
+    implementation "androidx.room:room-runtime:${rootProject.ext.roomVersion}"
+    implementation "androidx.room:room-ktx:${rootProject.ext.roomVersion}"
+    kapt("androidx.room:room-compiler:${rootProject.ext.roomVersion}")
+
     api project(path: ':data')
 
 }
