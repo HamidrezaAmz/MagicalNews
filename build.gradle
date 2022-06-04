@@ -37,6 +37,7 @@ ext {
     squareupRetrofit2Version = "2.9.0"
     squareupOkhttp3Version = "4.9.3"
     googleCodeGsonVersion = "2.8.6"
+    glideVersion = "4.13.0"
 }
 
 task clean(type: Delete) {

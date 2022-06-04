@@ -10,7 +10,7 @@ import ir.hamidrezaamz.domain.usecases.NewsSourceListUseCase
 import javax.inject.Inject
 
 @HiltViewModel
-class NewsListViewModel @Inject constructor(
+class NewsSourceListViewModel @Inject constructor(
     private val newsSourceListUseCase: NewsSourceListUseCase
 ) : ViewModel() {
 

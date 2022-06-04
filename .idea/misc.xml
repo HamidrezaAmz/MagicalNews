@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/layout/fragment_news_agency_details.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/layout/fragment_news_agency_list.xml" value="0.1" />
         <entry key="app/src/main/res/layout/recyclerview_news_source_list_item.xml" value="0.18796296296296297" />
+        <entry key="app/src/main/res/layout/recyclerview_news_top_headline_list_item.xml" value="0.1685185185185185" />
       </map>
     </option>
   </component>
