@@ -1,17 +1,15 @@
 package ir.hamidrezaAmz.magicalnews.view.adapter.viewholder
 
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import ir.hamidrezaAmz.magicalnews.R
-import ir.hamidrezaamz.data.apimodels.SourceModel
+import ir.hamidrezaAmz.magicalnews.view.myInterfaces.RecyclerViewListCallback
+import ir.hamidrezaamz.data.apimodels.NewsSourceModel
 
 class NewsSourceViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.recyclerview_news_source_list_item, parent, false)),
-    View.OnClickListener {
+    RecyclerView.ViewHolder(inflater.inflate(R.layout.recyclerview_news_source_list_item, parent, false)) {
 
     private var textViewTitle: AppCompatTextView? = null
     private var textViewDescription: AppCompatTextView? = null
@@ -19,16 +17,15 @@ class NewsSourceViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     init {
         textViewTitle = itemView.findViewById(R.id.appCompatTextView_title)
         textViewDescription = itemView.findViewById(R.id.appCompatTextView_description)
-
-        itemView.setOnClickListener(this)
     }
 
-    fun bind(sourceModel: SourceModel) {
-        textViewTitle?.text = sourceModel.name
-        textViewDescription?.text = sourceModel.description
+    fun bind(newsSourceModel: NewsSourceModel, recyclerViewListCallback: RecyclerViewListCallback?) {
+        textViewTitle?.text = newsSourceModel.name
+        textViewDescription?.text = newsSourceModel.description
+
+        itemView.setOnClickListener { _itemView ->
+            recyclerViewListCallback?.onItemClicked(newsSourceModel)
+        }
     }
 
-    override fun onClick(view: View?) {
-        Log.i("TAG", "onClick: ")
-    }
 }

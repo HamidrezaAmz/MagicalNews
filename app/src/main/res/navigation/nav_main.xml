@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/newsAgencyListFragment"
-        android:name="ir.hamidrezaAmz.magicalnews.view.fragments.NewsAgencyListFragment"
+        android:name="ir.hamidrezaAmz.magicalnews.view.fragments.NewsSourceListFragment"
         android:label="fragment_news_agency_list"
         tools:layout="@layout/fragment_news_agency_list">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/newsAgencyDetailsFragment"
-        android:name="ir.hamidrezaAmz.magicalnews.view.fragments.NewsAgencyDetailsFragment"
+        android:name="ir.hamidrezaAmz.magicalnews.view.fragments.NewsTopHeadlinesFragment"
         android:label="fragment_news_agency_details"
-        tools:layout="@layout/fragment_news_agency_details" />
+        tools:layout="@layout/fragment_news_top_headlines" />
 </navigation>

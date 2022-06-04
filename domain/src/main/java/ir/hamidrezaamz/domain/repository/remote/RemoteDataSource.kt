@@ -10,11 +10,11 @@ class RemoteDataSource @Inject constructor(
 ) : BaseDataSource() {
 
     suspend fun getNewsSourceList() = getResult {
-        newsApiService.getNewsSourceList(PublicValue.API_KEY)
+        newsApiService.getNewsSourceList(apiKey = PublicValue.API_KEY)
     }
 
-    suspend fun getNewsList() = getResult {
-        newsApiService.getNewsList("BITCOIN", PublicValue.API_KEY)
+    suspend fun getNewsTopHeadlinesList(sourceId: String) = getResult {
+        newsApiService.getNewsTopHeadlinesList(sourceId = sourceId, apiKey = PublicValue.API_KEY)
     }
 
 }

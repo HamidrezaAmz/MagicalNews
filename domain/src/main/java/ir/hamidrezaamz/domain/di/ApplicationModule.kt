@@ -11,6 +11,7 @@ import ir.hamidrezaamz.data.extras.PublicValue
 import ir.hamidrezaamz.domain.repository.DataRepositoryImpl
 import ir.hamidrezaamz.domain.repository.remote.RemoteDataSource
 import ir.hamidrezaamz.domain.usecases.NewsSourceListUseCase
+import ir.hamidrezaamz.domain.usecases.NewsTopHeadlineListUseCase
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -21,7 +22,11 @@ class ApplicationModule {
 
     @Singleton
     @Provides
-    fun provideNewsAgencyList(repo: DataRepositoryImpl) = NewsSourceListUseCase(repo)
+    fun provideNewsSourceListUseCase(repo: DataRepositoryImpl) = NewsSourceListUseCase(repo)
+
+    @Singleton
+    @Provides
+    fun provideNewsTopHeadlinesUseCase(repo: DataRepositoryImpl) = NewsTopHeadlineListUseCase(repo)
 
     @Singleton
     @Provides

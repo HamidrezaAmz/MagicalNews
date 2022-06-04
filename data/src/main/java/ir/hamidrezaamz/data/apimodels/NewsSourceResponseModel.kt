@@ -6,5 +6,5 @@ data class NewsSourceResponseModel(
     @SerializedName("status")
     var status: String,
     @SerializedName("sources")
-    var sources: List<SourceModel>
+    var sources: List<NewsSourceModel>
 )

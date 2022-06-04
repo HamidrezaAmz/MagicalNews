@@ -3,34 +3,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="250dp"
     android:background="?android:attr/selectableItemBackground"
     android:clickable="true"
     android:focusable="true">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView_cover"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/appCompatTextView_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/grayLight"
+        android:ellipsize="end"
+        android:maxLines="2"
         android:paddingStart="8dp"
         android:paddingTop="8dp"
         android:paddingEnd="8dp"
         android:textSize="14sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/appCompatTextView_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:text="THIS IS A SAMPLE TITLE" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/appCompatTextView_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/grayLight"
+        android:ellipsize="end"
+        android:maxLines="3"
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appCompatTextView_title"
         tools:text="THIS IS A SAMPLE NEWS DESCRIPTION" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

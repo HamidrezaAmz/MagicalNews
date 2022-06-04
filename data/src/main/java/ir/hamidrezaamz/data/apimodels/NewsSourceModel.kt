@@ -2,7 +2,7 @@ package ir.hamidrezaamz.data.apimodels
 
 import com.google.gson.annotations.SerializedName
 
-data class SourceModel(
+data class NewsSourceModel(
     @SerializedName("id")
     val id: String?,
     @SerializedName("name")

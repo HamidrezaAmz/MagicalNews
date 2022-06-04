@@ -1,8 +1,7 @@
 package ir.hamidrezaamz.domain.repository
 
-import ir.hamidrezaamz.data.apimodels.NewsArticlesResponseModel
 import ir.hamidrezaamz.data.apimodels.NewsSourceResponseModel
-import ir.hamidrezaamz.domain.models.NewsModel
+import ir.hamidrezaamz.data.apimodels.NewsTopHeadlinesResponseModel
 import ir.hamidrezaamz.domain.repository.remote.RemoteDataSource
 import ir.hamidrezaamz.domain.repository.remote.base.ApiResult
 import javax.inject.Inject
@@ -16,12 +15,8 @@ class DataRepositoryImpl @Inject constructor(
         return remoteDataSource.getNewsSourceList()
     }
 
-    override suspend fun getNewsList(): ApiResult<NewsArticlesResponseModel> {
-        return remoteDataSource.getNewsList()
-    }
-
-    override suspend fun getNewsDetail(): NewsModel {
-        return NewsModel(-1, "NO NAME")
+    override suspend fun getNewsTopHeadlinesList(sourceId: String): ApiResult<NewsTopHeadlinesResponseModel> {
+        return remoteDataSource.getNewsTopHeadlinesList(sourceId = sourceId)
     }
 
 }
