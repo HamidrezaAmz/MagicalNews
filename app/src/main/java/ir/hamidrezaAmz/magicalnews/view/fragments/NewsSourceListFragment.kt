@@ -1,6 +1,5 @@
 package ir.hamidrezaAmz.magicalnews.view.fragments
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
@@ -73,15 +72,6 @@ class NewsSourceListFragment : BaseFragmentBinding<FragmentNewsAgencyListBinding
                 adapter = NewsSourceListAdapter(_newsSourceList, this@NewsSourceListFragment)
             }
         }
-    }
-
-    private fun showError(message: String?) {
-        val errorMessage = if (message.isNullOrEmpty()) "No error message found." else message
-        AlertDialog.Builder(context)
-            .setTitle("Error!")
-            .setMessage(errorMessage)
-            .setPositiveButton(android.R.string.ok, null)
-            .show()
     }
 
 }

@@ -1,6 +1,5 @@
 package ir.hamidrezaAmz.magicalnews.view.fragments
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
@@ -69,15 +68,6 @@ class NewsTopHeadlinesFragment : BaseFragmentBinding<FragmentNewsTopHeadlinesBin
                 adapter = NewsTopHeadlineListAdapter(_newsArticleList, this@NewsTopHeadlinesFragment)
             }
         }
-    }
-
-    private fun showError(message: String?) {
-        val errorMessage = if (message.isNullOrEmpty()) "No error message found." else message
-        AlertDialog.Builder(context)
-            .setTitle("Error!")
-            .setMessage(errorMessage)
-            .setPositiveButton(android.R.string.ok, null)
-            .show()
     }
 
 }
