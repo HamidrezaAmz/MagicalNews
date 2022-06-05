@@ -21,8 +21,8 @@ Clean architecture is a method of software development in which you should be ab
 As you see we have 3 main layers: **Presentation** , **Domain**, **Data**
 
 - **Presentation or APP**: A layer that interacts with the UI, mainly Android Stuff like Activities, Fragments, ViewModel, etc. It would include both domain and data layers.
-- **Domain**: Contains the business logic of the application. It is the individual and innermost module. It’s a complete java module.
-- **Data**: It includes the domain layer. It would implement the interface exposed by domain layer and dispenses data to app
+- **Domain**: The domain layer contains all the use cases of your application.
+- **Data**: This has all the repositories which the domain layer can use. This layer exposes a data source API to outside classes.
 
 
 ## Network API
