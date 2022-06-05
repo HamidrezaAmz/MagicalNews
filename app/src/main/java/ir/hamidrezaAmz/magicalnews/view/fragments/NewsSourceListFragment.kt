@@ -5,6 +5,7 @@ import android.view.View
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import ir.hamidrezaAmz.magicalnews.R
@@ -69,6 +70,7 @@ class NewsSourceListFragment : BaseFragmentBinding<FragmentNewsAgencyListBinding
         newsSourceList?.let { _newsSourceList ->
             getBinding().recyclerView.apply {
                 layoutManager = LinearLayoutManager(activity)
+                addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
                 adapter = NewsSourceListAdapter(_newsSourceList, this@NewsSourceListFragment)
             }
         }
