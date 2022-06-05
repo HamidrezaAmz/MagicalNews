@@ -5,9 +5,10 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import ir.hamidrezaamz.data.apiservice.NewsApiService
-import ir.hamidrezaamz.data.db.dao.NewsSourceDao
 import ir.hamidrezaamz.domain.repository.DataRepositoryImpl
 import ir.hamidrezaamz.domain.repository.local.LocalDataSource
+import ir.hamidrezaamz.domain.repository.local.dao.NewsArticleDao
+import ir.hamidrezaamz.domain.repository.local.dao.NewsSourceDao
 import ir.hamidrezaamz.domain.repository.remote.RemoteDataSource
 import ir.hamidrezaamz.domain.usecases.NewsSourceListUseCase
 import ir.hamidrezaamz.domain.usecases.NewsTopHeadlineListUseCase
@@ -39,6 +40,7 @@ class ApplicationModule {
 
     @Singleton
     @Provides
-    fun provideLocalDataSource(newsSourceDao: NewsSourceDao) = LocalDataSource(newsSourceDao)
+    fun provideLocalDataSource(newsSourceDao: NewsSourceDao, newsArticleDao: NewsArticleDao) =
+        LocalDataSource(newsSourceDao, newsArticleDao)
 
 }

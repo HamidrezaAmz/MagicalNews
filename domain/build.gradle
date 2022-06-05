@@ -64,6 +64,17 @@ dependencies {
     implementation "androidx.room:room-ktx:${rootProject.ext.roomVersion}"
     kapt("androidx.room:room-compiler:${rootProject.ext.roomVersion}")
 
+    // RX
+    implementation("io.reactivex:rxjava:${rootProject.ext.rxjavaVersion}")
+    implementation("io.reactivex:rxandroid:${rootProject.ext.rxandroidVersion}")
+
+    // LIFECYCLE
+    implementation("androidx.lifecycle:lifecycle-extensions:${rootProject.ext.androidxLifecycleExtensionsVersion}")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.ext.androidxLifecycleVersion}")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.ext.androidxLifecycleVersion}")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.ext.androidxLifecycleVersion}")
+    implementation("androidx.fragment:fragment-ktx:${rootProject.ext.androidxFragmentKtxVersion}")
+
     api project(path: ':data')
 
 }

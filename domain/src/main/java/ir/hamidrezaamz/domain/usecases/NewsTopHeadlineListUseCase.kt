@@ -1,20 +1,16 @@
 package ir.hamidrezaamz.domain.usecases
 
-import ir.hamidrezaamz.data.apimodels.NewsTopHeadlinesResponseModel
+import ir.hamidrezaamz.data.db.entity.NewsArticleEntity
 import ir.hamidrezaamz.domain.repository.DataRepositoryImpl
-import ir.hamidrezaamz.domain.repository.remote.base.ApiResult
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
+import ir.hamidrezaamz.domain.repository.remote.base.Resource
+import kotlinx.coroutines.flow.Flow
 
 class NewsTopHeadlineListUseCase(
     private val repo: DataRepositoryImpl,
-    private val defaultDispatcher: CoroutineDispatcher = Dispatchers.Default
 ) {
 
-    suspend operator fun invoke(sourceId: String): ApiResult<NewsTopHeadlinesResponseModel> =
-        withContext(defaultDispatcher) {
-            repo.getNewsTopHeadlinesList(sourceId = sourceId)
-        }
+    suspend operator fun invoke(sourceId: String): Flow<Resource<List<NewsArticleEntity>>> {
+        return repo.getNewsTopHeadlinesList(sourceId = sourceId)
+    }
 
 }

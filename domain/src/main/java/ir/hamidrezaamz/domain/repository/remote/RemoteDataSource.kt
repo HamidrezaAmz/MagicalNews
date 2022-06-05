@@ -8,7 +8,7 @@ import javax.inject.Inject
 class RemoteDataSource @Inject constructor(
     private val newsApiService: NewsApiService
 ) : BaseDataSource() {
-
+    
     suspend fun getNewsSourceList() = getResult {
         newsApiService.getNewsSourceList(apiKey = PublicValue.API_KEY)
     }

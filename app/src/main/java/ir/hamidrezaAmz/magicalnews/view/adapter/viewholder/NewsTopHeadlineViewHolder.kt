@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ir.hamidrezaAmz.magicalnews.R
 import ir.hamidrezaAmz.magicalnews.view.myInterfaces.RecyclerViewListCallback
-import ir.hamidrezaamz.data.apimodels.NewsArticleModel
+import ir.hamidrezaamz.data.db.entity.NewsArticleEntity
 
 class NewsTopHeadlineViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.recyclerview_news_top_headline_list_item, parent, false)) {
@@ -23,25 +23,25 @@ class NewsTopHeadlineViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         textViewDescription = itemView.findViewById(R.id.appCompatTextView_description)
     }
 
-    fun bind(newsArticleModel: NewsArticleModel, recyclerViewListCallback: RecyclerViewListCallback?) {
+    fun bind(newsArticleEntity: NewsArticleEntity, recyclerViewListCallback: RecyclerViewListCallback?) {
 
         imageViewCover?.let { _imageViewCover ->
             Glide.with(itemView)
-                .load(newsArticleModel.urlToImage)
+                .load(newsArticleEntity.urlToImage)
                 .centerCrop()
                 .into(_imageViewCover)
         }
 
         textViewTitle?.let { _textViewTitle ->
-            _textViewTitle.text = newsArticleModel.title
+            _textViewTitle.text = newsArticleEntity.title
         }
 
         textViewDescription?.let { _textViewDescription ->
-            _textViewDescription.text = newsArticleModel.description
+            _textViewDescription.text = newsArticleEntity.description
         }
 
         itemView.setOnClickListener { _itemView ->
-            recyclerViewListCallback?.onItemClicked(newsArticleModel)
+            recyclerViewListCallback?.onItemClicked(newsArticleEntity)
         }
     }
 

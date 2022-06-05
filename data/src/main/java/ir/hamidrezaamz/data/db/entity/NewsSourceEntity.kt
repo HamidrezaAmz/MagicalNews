@@ -9,16 +9,22 @@ data class NewsSourceEntity(
     @PrimaryKey
     @ColumnInfo(name = "id")
     val id: String,
+
     @ColumnInfo(name = "name")
     val name: String?,
+
     @ColumnInfo(name = "description")
     val description: String?,
+
     @ColumnInfo(name = "url")
     val url: String?,
+
     @ColumnInfo(name = "category")
     val category: String?,
+
     @ColumnInfo(name = "language")
     val language: String?,
+
     @ColumnInfo(name = "country")
     val country: String?
 )

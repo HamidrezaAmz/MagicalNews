@@ -27,4 +27,8 @@ class DatabaseModule {
     @Provides
     fun provideNewsSourceDao(db: AppDatabase) = db.newsSourceDao()
 
+    @Singleton
+    @Provides
+    fun provideNewsArticleDao(db: AppDatabase) = db.newsArticleDao()
+
 }
