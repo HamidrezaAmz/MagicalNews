@@ -6,9 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import ir.hamidrezaAmz.magicalnews.view.adapter.viewholder.NewsTopHeadlineViewHolder
 import ir.hamidrezaAmz.magicalnews.view.myInterfaces.RecyclerViewListCallback
 import ir.hamidrezaamz.data.apimodels.NewsArticleModel
+import ir.hamidrezaamz.data.db.entity.NewsArticleEntity
 
 class NewsTopHeadlineListAdapter(
-    private val list: List<NewsArticleModel>,
+    private val list: List<NewsArticleEntity>,
     private val recyclerViewListCallback: RecyclerViewListCallback? = null
 ) : RecyclerView.Adapter<NewsTopHeadlineViewHolder>() {
 

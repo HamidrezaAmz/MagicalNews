@@ -27,17 +27,4 @@ sealed class ApiResult<out T>(val apiStatus: ApiStatus, val data: T?, val messag
         message = null
     )
 
-    /*companion object {
-        fun <T> success(data: T): ApiResult<T> {
-            return ApiResult(ApiStatus.SUCCESS, data, null)
-        }
-
-        fun <T> error(message: String, data: T? = null): ApiResult<T> {
-            return ApiResult(ApiStatus.ERROR, data, message)
-        }
-
-        fun <T> loading(data: T? = null): ApiResult<T> {
-            return ApiResult(ApiStatus.LOADING, data, null)
-        }
-    }*/
 }

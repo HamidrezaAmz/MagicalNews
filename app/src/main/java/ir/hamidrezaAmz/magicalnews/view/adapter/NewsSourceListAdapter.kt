@@ -6,9 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import ir.hamidrezaAmz.magicalnews.view.adapter.viewholder.NewsSourceViewHolder
 import ir.hamidrezaAmz.magicalnews.view.myInterfaces.RecyclerViewListCallback
 import ir.hamidrezaamz.data.apimodels.NewsSourceModel
+import ir.hamidrezaamz.data.db.entity.NewsSourceEntity
 
 class NewsSourceListAdapter(
-    private val list: List<NewsSourceModel>,
+    private val list: List<NewsSourceEntity>,
     private val recyclerViewListCallback: RecyclerViewListCallback? = null
 ) : RecyclerView.Adapter<NewsSourceViewHolder>() {
 

@@ -1,13 +1,14 @@
 package ir.hamidrezaamz.domain.repository
 
-import ir.hamidrezaamz.data.apimodels.NewsSourceResponseModel
-import ir.hamidrezaamz.data.apimodels.NewsTopHeadlinesResponseModel
-import ir.hamidrezaamz.domain.repository.remote.base.ApiResult
+import ir.hamidrezaamz.data.db.entity.NewsArticleEntity
+import ir.hamidrezaamz.data.db.entity.NewsSourceEntity
+import ir.hamidrezaamz.domain.repository.remote.base.Resource
+import kotlinx.coroutines.flow.Flow
 
 interface DataRepository {
 
-    suspend fun getNewsSourceList(): ApiResult<NewsSourceResponseModel>
+    suspend fun getNewsSourceList(): Flow<Resource<List<NewsSourceEntity>>>
 
-    suspend fun getNewsTopHeadlinesList(sourceId: String): ApiResult<NewsTopHeadlinesResponseModel>
+    suspend fun getNewsTopHeadlinesList(sourceId: String): Flow<Resource<List<NewsArticleEntity>>>
 
 }

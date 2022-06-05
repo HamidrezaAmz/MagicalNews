@@ -14,9 +14,14 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // RETROFIT
-    implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.squareupRetrofit2Version}"
+    implementation("com.squareup.retrofit2:converter-gson:${rootProject.ext.squareupRetrofit2Version}")
     implementation("com.squareup.retrofit2:retrofit:${rootProject.ext.squareupRetrofit2Version}") {
         exclude module: 'okhttp'
     }
+
+    // ROOM
+    implementation("androidx.room:room-runtime:${rootProject.ext.roomVersion}")
+    implementation("androidx.room:room-ktx:${rootProject.ext.roomVersion}")
+    kapt("androidx.room:room-compiler:${rootProject.ext.roomVersion}")
 
 }
